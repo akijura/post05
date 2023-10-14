@@ -54,7 +54,7 @@ func exists(username string) int {
 	defer db.Close()
 	userID := -1
 
-	statement := fmt.Sprintf(`SELECT "id" FROM "users WHERE username = '%s'"`, username)
+	statement := fmt.Sprintf(`SELECT "id" FROM "users" where username = '%s'`, username)
 	rows, err := db.Query(statement)
 	if err != nil {
 		fmt.Println("Query", err)
